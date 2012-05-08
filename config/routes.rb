@@ -1,4 +1,6 @@
 Klife::Application.routes.draw do
+  resources :resources
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

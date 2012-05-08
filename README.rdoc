@@ -12,7 +12,8 @@
 - clean gemfile
 .ensure it has jquery, sass, and maybe haml
 .delete coffee gem
-
+- add scaffold or Resource model
+.rails g scaffold Resource title:string raw_url:string clean_url:string description:text
 
 
 == Welcome to Rails
