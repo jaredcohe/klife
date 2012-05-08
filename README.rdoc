@@ -14,6 +14,11 @@
 .delete coffee gem
 - add scaffold or Resource model
 .rails g scaffold Resource title:string raw_url:string clean_url:string description:text
+- add user_id column to Resource model
+.generate the migration - rails g migration AddUserIdToResource
+.edit migration
+.rake db:migrate
+
 
 
 == Welcome to Rails
