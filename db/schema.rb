@@ -11,16 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120508135021) do
+ActiveRecord::Schema.define(:version => 20120511001153) do
 
   create_table "resources", :force => true do |t|
-    t.string   "title",                      :null => false
-    t.string   "raw_url",                    :null => false
-    t.string   "clean_url",                  :null => false
+    t.string   "title",                              :null => false
+    t.string   "raw_url",                            :null => false
     t.text     "description"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.integer  "user_id",                    :default => 1
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.integer  "user_id",             :default => 1
+    t.text     "keywords"
+    t.text     "keywords_scraped"
+    t.text     "title_scraped"
+    t.text     "description_scraped"
   end
 
 end

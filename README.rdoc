@@ -18,6 +18,18 @@
 .generate the migration - rails g migration AddUserIdToResource
 .edit migration
 .rake db:migrate
+- routes for root
+.added to routes: root :to => 'resources#index'
+.deleted public/index.html
+- add columns to resource model for keywords, keywords from site, title from site, description from site
+.rails g migration AddColumnsToResource
+
+
+#make scraper
+#make user model, including authentication and cookies
+- rails 250, 270, 274
+#add to top of created file the command and railscast
+
 
 
 == Welcome to Rails
