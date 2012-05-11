@@ -16,12 +16,32 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
+    <%= f.label :title_scraped %><br />
+    <%= f.text_field :title_scraped %>
+  </div>  
+  <div class="field">
     <%= f.label :raw_url, "URL" %><br />
     <%= f.text_field :raw_url %>
   </div>
   <div class="field">
+    <%= f.label :user_id, "User ID" %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :description_scraped %><br />
+    <%= f.text_area :description_scraped %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br />
+    <%= f.text_area :keywords %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords_scraped %><br />
+    <%= f.text_area :keywords_scraped %>
   </div>
   <div class="actions">
     <%= f.submit %>

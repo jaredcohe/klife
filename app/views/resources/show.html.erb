@@ -4,17 +4,35 @@
   <b>Title:</b>
   <%= @resource.title %>
 </p>
-
+<p>
+  <b>Title_Scraped:</b>
+  <%= @resource.title_scraped %>
+</p>
 <p>
   <b>Raw url:</b>
   <%= @resource.raw_url %>
 </p>
-
+<p>
+  <b>User ID:</b>
+  <%= @resource.user_id %>
+</p>
 <p>
   <b>Description:</b>
   <%= @resource.description %>
 </p>
+<p>
+  <b>Description_Scraped:</b>
+  <%= @resource.description_scraped %>
+</p>
 
+<p>
+  <b>Keywords:</b>
+  <%= @resource.keywords %>
+</p>
+<p>
+  <b>Keywords_Scraped:</b>
+  <%= @resource.keywords_scraped %>
+</p>
 
 <%= link_to 'Edit', edit_resource_path(@resource) %> |
 <%= link_to 'Back', resources_path %>

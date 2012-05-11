@@ -1,4 +1,7 @@
 class ResourcesController < ApplicationController
+  # rails g scaffold Resource title:string raw_url:string clean_url:string
+  # this makes a lot of other stuff too, see commit
+  
   # GET /resources
   # GET /resources.json
   def index
@@ -40,7 +43,20 @@ class ResourcesController < ApplicationController
   # POST /resources
   # POST /resources.json
   def create
+    p 'running ResourcesController#create'
     @resource = Resource.new(params[:resource])
+
+    # try to scrape
+    resource_object = Resource.scrape_data(@resource.raw_url)
+
+    # if scraping worked
+    if resource_object[:good_url]
+      # add scraped data or nils to @resource
+      @resource.keywords_scraped = resource_object[:keywords_scraped]
+      @resource.description_scraped = resource_object[:description_scraped]
+      @resource.title_scraped = resource_object[:title_scraped]
+      @resource.raw_html = resource_object[:raw_html]
+    end
 
     respond_to do |format|
       if @resource.save

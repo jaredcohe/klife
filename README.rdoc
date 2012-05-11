@@ -23,14 +23,11 @@
 .deleted public/index.html
 - add columns to resource model for keywords, keywords from site, title from site, description from site
 .rails g migration AddColumnsToResource
+.manually change migration file, rake db:migrate
 
-
-#make scraper
 #make user model, including authentication and cookies
 - rails 250, 270, 274
-#add to top of created file the command and railscast
-
-
+#remove duplication of URLs
 
 == Welcome to Rails
 

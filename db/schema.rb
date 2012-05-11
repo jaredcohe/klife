@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511001153) do
+ActiveRecord::Schema.define(:version => 20120511194045) do
 
   create_table "resources", :force => true do |t|
     t.string   "title",                              :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120511001153) do
     t.text     "keywords_scraped"
     t.text     "title_scraped"
     t.text     "description_scraped"
+    t.text     "raw_html"
   end
 
 end
