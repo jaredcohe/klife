@@ -8,7 +8,21 @@
 </head>
 <body>
 
-<%= yield %>
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, :id => "flash_#{name}" %>
+  <% end %>
+
+  <nav class='top_menu'>
+    <%= link_to "home", :root %>
+    <% if current_user %>
+      <%= link_to "log out", log_out_path %>
+    <% else %>
+      <%= link_to "log in or sign up", log_in_path %>
+    <% end %>
+  </nav>
+
+
+  <%= yield %>
 
 </body>
 </html>

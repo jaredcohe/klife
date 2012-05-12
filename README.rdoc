@@ -24,10 +24,17 @@
 - add columns to resource model for keywords, keywords from site, title from site, description from site
 .rails g migration AddColumnsToResource
 .manually change migration file, rake db:migrate
+- make user model, including authentication and cookies
+.railscast 250
+.rails g controller users new
+.rails g model user email:string password_hash:string password_salt:string
+.rake db:migrate
+.rails g controller sessions new
 
-#make user model, including authentication and cookies
-- rails 250, 270, 274
+
+270, 274
 #remove duplication of URLs
+#add reviews
 
 == Welcome to Rails
 
