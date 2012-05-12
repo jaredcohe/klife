@@ -3,8 +3,12 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Title Scraped</th>
     <th>Raw url</th>
     <th>Description</th>
+    <th>Description Scraped</th>
+    <th>Keywords</th>
+    <th>Keywords Scraped</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,8 +17,12 @@
 <% @resources.each do |resource| %>
   <tr>
     <td><%= resource.title %></td>
+    <td><%= resource.title_scraped %></td>
     <td><%= resource.raw_url %></td>
     <td><%= resource.description %></td>
+    <td><%= resource.description_scraped %></td>
+    <td><%= resource.keywords %></td>
+    <td><%= resource.keywords_scraped %></td>
     <td><%= link_to 'Show', resource %></td>
     <td><%= link_to 'Edit', edit_resource_path(resource) %></td>
     <td><%= link_to 'Destroy', resource, confirm: 'Are you sure?', method: :delete %></td>
