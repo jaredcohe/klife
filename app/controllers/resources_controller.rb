@@ -1,6 +1,8 @@
 class ResourcesController < ApplicationController
   # rails g scaffold Resource title:string raw_url:string clean_url:string
   # this makes a lot of other stuff too, see commit
+
+  before_filter :authorize, only: [:edit, :update]
   
   # GET /resources
   # GET /resources.json

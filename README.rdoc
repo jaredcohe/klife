@@ -30,11 +30,18 @@
 .rails g model user email:string password_hash:string password_salt:string
 .rake db:migrate
 .rails g controller sessions new
+- update authentication with revised 250
 
 
+http://railscasts.com/episodes/270-authentication-in-rails-3-1
 270, 274
 #remove duplication of URLs
+.use URL and title?
+
 #add reviews
+#add collection model
+.user_id, resource_id, order, title, description, keywords
+
 
 == Welcome to Rails
 

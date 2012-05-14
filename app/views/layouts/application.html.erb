@@ -17,7 +17,8 @@
     <% if current_user %>
       <%= link_to "log out", log_out_path %>
     <% else %>
-      <%= link_to "log in or sign up", log_in_path %>
+      <%= link_to "log in", log_in_path %>
+      <%= link_to "sign up", sign_up_path %>
     <% end %>
   </nav>
 
