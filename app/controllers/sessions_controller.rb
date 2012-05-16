@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   # rails g controller sessions new
+  force_ssl
+
   def new
   end
   

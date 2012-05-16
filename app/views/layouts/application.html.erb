@@ -15,7 +15,7 @@
   <nav class='top_menu'>
     <%= link_to "home", :root %>
     <% if current_user %>
-      <%= link_to "log out", log_out_path %>
+      <%= link_to "log out #{current_user.email}", log_out_path %>
     <% else %>
       <%= link_to "log in", log_in_path %>
       <%= link_to "sign up", sign_up_path %>

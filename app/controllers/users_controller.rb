@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # rails g controller users new
+  force_ssl
 
   def new
     @user = User.new

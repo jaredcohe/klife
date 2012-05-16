@@ -18,7 +18,7 @@
   <tr>
     <td><%= resource.title %></td>
     <td><%= resource.title_scraped %></td>
-    <td><%= resource.raw_url %></td>
+    <td><%= link_to resource.raw_url, resource.raw_url, :target => "_blank" %></td>
     <td><%= resource.description %></td>
     <td><%= resource.description_scraped %></td>
     <td><%= resource.keywords %></td>

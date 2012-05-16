@@ -31,14 +31,15 @@
 .rake db:migrate
 .rails g controller sessions new
 - update authentication with revised 250
+- railscasts 270 on additional authentication stuff
 
+#add reviews
 
-http://railscasts.com/episodes/270-authentication-in-rails-3-1
-270, 274
+274 - http://railscasts.com/episodes/274-remember-me-reset-password
+
 #remove duplication of URLs
 .use URL and title?
 
-#add reviews
 #add collection model
 .user_id, resource_id, order, title, description, keywords
 
