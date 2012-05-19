@@ -32,16 +32,33 @@
 .rails g controller sessions new
 - update authentication with revised 250
 - railscasts 270 on additional authentication stuff
+- railscasts 274 on additional authentication stuff, remember me, reset password
+.rails g migration add_auth_token_to_users auth_token:string
+.rails g controller password_resets new
+.rails g migration add_password_reset_to_users password_reset_token:string
+password_reset_sent_at:datetime
+.rails g mailer user_mailer password_reset
+- rake task to add auth tokens, http://railscasts.com/episodes/66-custom-rake-tasks
+
+#put it on heroku
 
 #add reviews
 
-274 - http://railscasts.com/episodes/274-remember-me-reset-password
+#add collection model
+.user_id, resource_id, order, title, description, keywords
+
+#add ability to drag and drop collections
+
+#add search
+
+#add link to email that makes the user confirm - "change a field in the database to show the person is confirmed" - end of railscasts 274, that code can be used for this
 
 #remove duplication of URLs
 .use URL and title?
 
-#add collection model
-.user_id, resource_id, order, title, description, keywords
+#add todo list
+
+
 
 
 == Welcome to Rails

@@ -52,13 +52,13 @@ class ResourcesController < ApplicationController
     resource_object = Resource.scrape_data(@resource.raw_url)
 
     # if scraping worked
-    if resource_object[:good_url]
+    # if resource_object[:good_url]
       # add scraped data or nils to @resource
-      @resource.keywords_scraped = resource_object[:keywords_scraped]
-      @resource.description_scraped = resource_object[:description_scraped]
-      @resource.title_scraped = resource_object[:title_scraped]
-      @resource.raw_html = resource_object[:raw_html]
-    end
+    @resource.keywords_scraped = resource_object[:keywords_scraped] ? resource_object[:keywords_scraped] : nil
+    @resource.description_scraped = resource_object[:description_scraped] ? resource_object[:description_scraped] : nil
+    @resource.title_scraped = resource_object[:title_scraped] ? resource_object[:title_scraped] : nil
+    @resource.raw_html = resource_object[:raw_html] ? resource_object[:raw_html] : nil
+    # end
 
     respond_to do |format|
       if @resource.save
