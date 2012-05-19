@@ -39,8 +39,15 @@
 password_reset_sent_at:datetime
 .rails g mailer user_mailer password_reset
 - rake task to add auth tokens, http://railscasts.com/episodes/66-custom-rake-tasks
+- put it on heroku
+.bundle exec rake assets:precompile
+.heroku create
+.git push heroku master
+.heroku rename <name>
+.heroku run rake db:migrate
+.heroku db:push
 
-#put it on heroku
+
 
 #add reviews
 
