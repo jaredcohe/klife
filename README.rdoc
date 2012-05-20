@@ -12,7 +12,7 @@
 - clean gemfile
 .ensure it has jquery, sass, and maybe haml
 .delete coffee gem
-- add scaffold or Resource model
+- add scaffold for Resource model
 .rails g scaffold Resource title:string raw_url:string clean_url:string description:text
 - add user_id column to Resource model
 .generate the migration - rails g migration AddUserIdToResource
@@ -46,13 +46,16 @@ password_reset_sent_at:datetime
 .heroku rename <name>
 .heroku run rake db:migrate
 .heroku db:push
+- add collection model
+.rails g scaffold Collection user_id:integer, title:string, description:text, keywords:text
 
-
+.has_many resources, :through => :
+resources has_many :collections, :through => :collectionizes
+resources has_many :collectionizes
+.joins table - .collection_id:integer, resource_id:integer, order:integer, instruction:text
 
 #add reviews
-
-#add collection model
-.user_id, resource_id, order, title, description, keywords
+.user_id, resource_id
 
 #add ability to drag and drop collections
 

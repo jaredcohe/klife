@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120518125512) do
+ActiveRecord::Schema.define(:version => 20120520145751) do
+
+  create_table "collections", :force => true do |t|
+    t.integer  "user_id",     :null => false
+    t.string   "title",       :null => false
+    t.text     "description"
+    t.text     "keywords"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "resources", :force => true do |t|
     t.string   "title",                              :null => false
