@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  collection_id: 1
+  resource_id: 1
+  order: 1
+  notes: MyText
+
+two:
+  collection_id: 1
+  resource_id: 1
+  order: 1
+  notes: MyText

@@ -48,11 +48,8 @@ password_reset_sent_at:datetime
 .heroku db:push
 - add collection model
 .rails g scaffold Collection user_id:integer, title:string, description:text, keywords:text
-
-.has_many resources, :through => :
-resources has_many :collections, :through => :collectionizes
-resources has_many :collectionizes
-.joins table - .collection_id:integer, resource_id:integer, order:integer, instruction:text
+- add collectionize model for join table through
+.rails g model collectionize collection_id:integer resource_id:integer order:integer notes:text
 
 #add reviews
 .user_id, resource_id
