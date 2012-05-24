@@ -32,11 +32,11 @@ ActiveRecord::Schema.define(:version => 20120520150639) do
   end
 
   create_table "resources", :force => true do |t|
-    t.string   "title",               :null => false
-    t.string   "raw_url",             :null => false
+    t.string   "title",                              :null => false
+    t.string   "raw_url",                            :null => false
     t.text     "description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "user_id",             :default => 1
     t.text     "keywords"
     t.text     "keywords_scraped"

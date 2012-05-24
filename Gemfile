@@ -6,6 +6,7 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'mysql2', ">=0.3"
 
 # railscasts 250 revised
 gem "bcrypt-ruby", '~> 3.0.0'
