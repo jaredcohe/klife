@@ -2,7 +2,9 @@ class Resource < ActiveRecord::Base
   # rails g scaffold Resource title:string raw_url:string clean_url:string
   
   has_many :collectionizes
-  has_many :collections, :through => :collectionizes
+  has_many :collections, :through => :collectionizes, :foreign_key => :collection_id
+  accepts_nested_attributes_for :collectionizes
+  accepts_nested_attributes_for :collections
   
   def self.convert_raw_to_clean_url(raw_url)
     clean_url = raw_url + "OOOOO"

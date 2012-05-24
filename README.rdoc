@@ -51,12 +51,22 @@ password_reset_sent_at:datetime
 - add collectionize model for join table through
 .rails g model collectionize collection_id:integer resource_id:integer order:integer notes:text
 
-#add reviews
+#change to mysql
+database.yml
+migrate
+
+#add ability to create collections by putting in a URL or searching Resources
+http://railscasts.com/episodes/196-nested-model-form-revised
+
+#add search of collections and resources
+http://railscasts.com/episodes/343-full-text-search-in-postgresql
+http://railscasts.com/episodes/240-search-sort-paginate-with-ajax
+http://railscasts.com/episodes/111-advanced-search-form-revised
+
+#add reviews of collections and resources
 .user_id, resource_id
 
 #add ability to drag and drop collections
-
-#add search
 
 #add link to email that makes the user confirm - "change a field in the database to show the person is confirmed" - end of railscasts 274, that code can be used for this
 

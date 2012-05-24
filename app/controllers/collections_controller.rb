@@ -3,7 +3,6 @@ class CollectionsController < ApplicationController
   # GET /collections.json
   def index
     @collections = Collection.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @collections }
@@ -25,6 +24,14 @@ class CollectionsController < ApplicationController
   # GET /collections/new.json
   def new
     @collection = Collection.new
+    @collection.collectionizes.build.build_resource
+    
+    #2.times { @collection.collectionizes.build.build_resource }
+    p @collection
+    p @collection.collectionizes
+    p @collection.resources
+    p @collection.collectionizes.first.resource
+    p @collection.collectionizes.last.resource
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +48,16 @@ class CollectionsController < ApplicationController
   # POST /collections.json
   def create
     @collection = Collection.new(params[:collection])
+
+    #i = 0
+    #@collection.collectionizes.each do |collectionize|
+    #  p @collection
+    #  p collectionize
+    #  p collectionize.resource
+    #  p "---------------------"
+    #  collectionize.order = i
+    #  i = i + 1
+    #end
 
     respond_to do |format|
       if @collection.save

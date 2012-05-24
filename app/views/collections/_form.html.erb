@@ -11,22 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :keywords %><br />
-    <%= f.text_area :keywords %>
-  </div>
+  <%= render 'collections_fields', :f => f %>
+
+  <%= f.fields_for :collectionizes do |each_collectionizes| %>
+    <%= render 'collectionizes_fields', :f => each_collectionizes %>
+    <%= each_collectionizes.fields_for :resource do |the_resource| %>
+      <%= render 'resources/resources_fields', :f => the_resource %>
+      <hr />
+    <% end %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
