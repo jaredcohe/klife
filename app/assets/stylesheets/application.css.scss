@@ -1,0 +1,62 @@
+//
+// * This is a manifest file that'll be compiled into application.css, which will include all the files
+// * listed below.
+// *
+// * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+// * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+// *
+// * You're free to add application-wide styles to this file and they'll appear at the top of the
+// * compiled file, but it's generally better to create a new file per style scope.
+// *
+// *= require_self
+// *= require_tree .
+// */
+
+// Clear everything
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+//  border: solid 1px black;
+//  word-wrap: break-word;
+//  word-break: break-all;
+  }
+  
+body {
+  font-size: 14px;
+  font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; 
+  padding: 0;
+  margin: 0; }
+
+$darkblue1: #4E4D56;
+$darkblue2: #47616F;
+$lightblue1: #56C1DA;
+$lightblue2: #9AC0CD;
+$gray1: #E2E3E5;
+$gray2: #EBECEF;
+$gray3: #C9C9C9;
+$gray4: #3D3537;
+$darkgray: #636363;
+$green: #5C963C;
+$darkgreen: #45702d;
+$lightgreen: #58E09A;
+$purple: #7B489E;
+$orange: #EE9134;
+$yellow: #F7ED3E;
+$white: #FFFFFF;

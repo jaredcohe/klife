@@ -8,33 +8,18 @@ class ResourcesController < ApplicationController
   # GET /resources.json
   def index
     @resources = Resource.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @resources }
-    end
   end
 
   # GET /resources/1
   # GET /resources/1.json
   def show
     @resource = Resource.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @resource }
-    end
   end
 
   # GET /resources/new
   # GET /resources/new.json
   def new
     @resource = Resource.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @resource }
-    end
   end
 
   # GET /resources/1/edit
@@ -50,15 +35,11 @@ class ResourcesController < ApplicationController
 
     # try to scrape
     resource_object = Resource.scrape_data(@resource.raw_url)
-
-    # if scraping worked
-    # if resource_object[:good_url]
-      # add scraped data or nils to @resource
+    # add scraped data or nil
     @resource.keywords_scraped = resource_object[:keywords_scraped] ? resource_object[:keywords_scraped] : nil
     @resource.description_scraped = resource_object[:description_scraped] ? resource_object[:description_scraped] : nil
     @resource.title_scraped = resource_object[:title_scraped] ? resource_object[:title_scraped] : nil
     @resource.raw_html = resource_object[:raw_html] ? resource_object[:raw_html] : nil
-    # end
 
     respond_to do |format|
       if @resource.save

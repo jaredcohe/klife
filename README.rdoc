@@ -50,10 +50,12 @@ password_reset_sent_at:datetime
 .rails g scaffold Collection user_id:integer, title:string, description:text, keywords:text
 - add collectionize model for join table through
 .rails g model collectionize collection_id:integer resource_id:integer order:integer notes:text
+- change to mysql
+.database.yml change
+.migrate
+.heroku db:pull
 
-#change to mysql
-database.yml
-migrate
+# collection#create work properly, scrape resource
 
 #add ability to create collections by putting in a URL or searching Resources
 http://railscasts.com/episodes/196-nested-model-form-revised
@@ -62,6 +64,8 @@ http://railscasts.com/episodes/196-nested-model-form-revised
 http://railscasts.com/episodes/343-full-text-search-in-postgresql
 http://railscasts.com/episodes/240-search-sort-paginate-with-ajax
 http://railscasts.com/episodes/111-advanced-search-form-revised
+.search of "r" and "R" should return R programming and not everything with an R
+
 
 #add reviews of collections and resources
 .user_id, resource_id

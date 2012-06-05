@@ -1,4 +1,6 @@
 class CollectionsController < ApplicationController
+  before_filter :authorize, only: [:new, :create, :edit, :update]
+
   # GET /collections
   # GET /collections.json
   def index
@@ -49,15 +51,17 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(params[:collection])
 
-    #i = 0
-    #@collection.collectionizes.each do |collectionize|
-    #  p @collection
-    #  p collectionize
-    #  p collectionize.resource
-    #  p "---------------------"
-    #  collectionize.order = i
-    #  i = i + 1
-    #end
+    # scrape each resource URL to add those fields
+    @collection.collectionizes.each do |each_collectionize|
+      resource_object = Resource.scrape_data(each_collectionize.resource.raw_url)
+
+      each_collectionize.resource
+      resource_object = Resource.scrape_data(@resource.raw_url)
+      each_collectionize.resource.keywords_scraped = resource_object[:keywords_scraped] ? resource_object[:keywords_scraped] : nil
+      each_collectionize.resource.description_scraped = resource_object[:description_scraped] ? resource_object[:description_scraped] : nil
+      each_collectionize.resource.title_scraped = resource_object[:title_scraped] ? resource_object[:title_scraped] : nil
+      each_collectionize.resource.raw_html = resource_object[:raw_html] ? resource_object[:raw_html] : nil
+    end
 
     respond_to do |format|
       if @collection.save

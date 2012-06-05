@@ -13,13 +13,17 @@
   <% end %>
 
   <nav class='top_menu'>
-    <%= link_to "home", :root %>
-    <% if current_user %>
-      <%= link_to "log out #{current_user.email}", log_out_path %>
-    <% else %>
-      <%= link_to "log in", log_in_path %>
-      <%= link_to "sign up", sign_up_path %>
-    <% end %>
+    <ul>
+      <li><%= link_to "home", :root %></li>
+      <% if current_user %>
+        <li><%= link_to "log out #{current_user.email}", log_out_path %></li>
+      <% else %>
+        <li><%= link_to "log in", log_in_path %></li>
+        <li><%= link_to "sign up", sign_up_path %></li>
+      <% end %>
+      <li><%= link_to 'New Resource', new_resource_path %></li>
+      <li><%= link_to 'New Collection', new_collection_path %>
+    </ul>
   </nav>
 
 
