@@ -13,6 +13,8 @@
 
   <%= render 'collections_fields', :f => f %>
 
+  <hr />
+
   <%= f.fields_for :collectionizes do |each_collectionizes| %>
     <%= render 'collectionizes_fields', :f => each_collectionizes %>
     <%= each_collectionizes.fields_for :resource do |the_resource| %>

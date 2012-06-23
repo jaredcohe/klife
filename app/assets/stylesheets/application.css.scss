@@ -33,7 +33,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 //  word-wrap: break-word;
 //  word-break: break-all;
   }
-  
+
 body {
   font-size: 14px;
   font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
@@ -60,3 +60,8 @@ $purple: #7B489E;
 $orange: #EE9134;
 $yellow: #F7ED3E;
 $white: #FFFFFF;
+
+hr {
+  color: $purple;
+  height: 10px;
+}

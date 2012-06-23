@@ -5,40 +5,27 @@ class CollectionsController < ApplicationController
   # GET /collections.json
   def index
     @collections = Collection.all
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @collections }
-    end
   end
 
   # GET /collections/1
   # GET /collections/1.json
   def show
     @collection = Collection.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @collection }
-    end
   end
 
   # GET /collections/new
   # GET /collections/new.json
   def new
     @collection = Collection.new
-    @collection.collectionizes.build.build_resource
     
-    #2.times { @collection.collectionizes.build.build_resource }
+    2.times { @collection.collectionizes.build.build_resource }
+
     p @collection
     p @collection.collectionizes
     p @collection.resources
     p @collection.collectionizes.first.resource
     p @collection.collectionizes.last.resource
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @collection }
-    end
   end
 
   # GET /collections/1/edit
@@ -65,11 +52,9 @@ class CollectionsController < ApplicationController
 
     respond_to do |format|
       if @collection.save
-        format.html { redirect_to @collection, notice: 'Collection was successfully created.' }
-        format.json { render json: @collection, status: :created, location: @collection }
+        redirect_to @collection, notice: 'Collection was successfully created.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @collection.errors, status: :unprocessable_entity }
+        render action: "new"
       end
     end
   end
